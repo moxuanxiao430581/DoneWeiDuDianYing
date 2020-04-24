@@ -1,6 +1,11 @@
 package com.example.doneweidudianying.net;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.util.Log;
+
 import com.example.doneweidudianying.api.ApiServer;
+import com.example.doneweidudianying.app.App;
 import com.example.doneweidudianying.url.BaseUrl;
 import com.google.gson.Gson;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
@@ -45,8 +50,15 @@ public class NetUtlis {
                         Request request = chain.request();
                         Request.Builder builder = request.newBuilder();
                         //添加请求头
-                       // builder.addHeader();
-                       // builder.addHeader();
+                        SharedPreferences queryuser = App.mContext.getSharedPreferences("Queryuser", Context.MODE_PRIVATE);
+                        //获取请求头
+                        int userId = queryuser.getInt("userId", 0);
+                        String sessionId = queryuser.getString("sessionId", "");
+                        Log.i("userId",userId+"");
+                        Log.i("sessionId",sessionId+"");
+                        //设置请求头
+                        builder.addHeader("userId",userId+"");
+                        builder.addHeader("sessionId",sessionId);
                         Request build = builder.build();
                         return chain.proceed(build);
                     }
@@ -175,5 +187,70 @@ public class NetUtlis {
                     }
                 });
     }
+    //根据用户ID查询用户信息请求
+    public void GetQueryuserInfo(String url, final Class cls, final NetCallBack callBack){
+       apiServer.GetQueryuserInfo(url).subscribeOn(Schedulers.io())
+               .observeOn(AndroidSchedulers.mainThread())
+               .subscribe(new Observer<ResponseBody>() {
+                   @Override
+                   public void onSubscribe(Disposable d) {
+
+                   }
+
+                   @Override
+                   public void onNext(ResponseBody responseBody) {
+                        Gson gson = new Gson();
+                       try {
+                           Object o = gson.fromJson(responseBody.string(), cls);
+                           callBack.onSuccess(o);
+                       } catch (IOException e) {
+                           e.printStackTrace();
+                       }
+                   }
+
+                   @Override
+                   public void onError(Throwable e) {
+
+                   }
+
+                   @Override
+                   public void onComplete() {
+
+                   }
+               });
+    }
+    //查询banner
+    public void GetXBannerInfo(String url, final Class cls, final NetCallBack callBack){
+        apiServer.GetQueryuserInfo(url).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<ResponseBody>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(ResponseBody responseBody) {
+                        Gson gson = new Gson();
+                        try {
+                            Object o = gson.fromJson(responseBody.string(), cls);
+                            callBack.onSuccess(o);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+
 
 }

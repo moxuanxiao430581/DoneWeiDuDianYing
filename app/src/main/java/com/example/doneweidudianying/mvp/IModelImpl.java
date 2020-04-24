@@ -51,5 +51,36 @@ public class IModelImpl implements IContract.IModel {
             }
         });
     }
+    //根据用户ID查询用户信息
+    @Override
+    public void ModelGetQueryuserInfo(String url, Class cls, IContract.ICallBack callBack) {
+        NetUtlis.getInstance().GetQueryuserInfo(url, cls, new NetUtlis.NetCallBack() {
+            @Override
+            public void onSuccess(Object o) {
+                callBack.onSuccess(o);
+            }
+
+            @Override
+            public void onError(String error) {
+
+            }
+        });
+    }
+    //查询banner
+    @Override
+    public void ModelGetXBannerInfo(String url, Class cls, IContract.ICallBack callBack) {
+        NetUtlis.getInstance().GetXBannerInfo(url, cls, new NetUtlis.NetCallBack() {
+            @Override
+            public void onSuccess(Object o) {
+                callBack.onSuccess(o);
+            }
+
+            @Override
+            public void onError(String error) {
+
+            }
+        });
+    }
+
 
 }

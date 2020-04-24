@@ -58,5 +58,35 @@ public class IPresenterImpl extends BasePresenter {
             }
         });
     }
+    //根据用户ID查询用户信息
+    @Override
+    public void PresenterGetQueryuserInfo(String url, Class cls) {
+        iModel.ModelGetQueryuserInfo(url, cls, new IContract.ICallBack() {
+            @Override
+            public void onSuccess(Object o) {
+                getView().onSuccess(o);
+            }
+
+            @Override
+            public void onError(String error) {
+
+            }
+        });
+    }
+    //查询banner
+    @Override
+    public void PresenterGetXBannerInfo(String url, Class cls) {
+        iModel.ModelGetXBannerInfo(url, cls, new IContract.ICallBack() {
+            @Override
+            public void onSuccess(Object o) {
+                getView().onSuccess(o);
+            }
+
+            @Override
+            public void onError(String error) {
+
+            }
+        });
+    }
 
 }

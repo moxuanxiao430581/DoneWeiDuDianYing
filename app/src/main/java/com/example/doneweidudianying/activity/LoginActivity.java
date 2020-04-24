@@ -3,6 +3,7 @@ package com.example.doneweidudianying.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -27,9 +28,13 @@ public class LoginActivity extends BaseActivity {
     private Button loginbt;
     private EditText loginpass;
     private EditText loginemail;
+    private SharedPreferences sp;
 
     @Override
     protected void initData() {
+        //存储userId、sessionId
+        sp = getSharedPreferences("Queryuser", MODE_PRIVATE);
+
         //点击无账号
         resigntx.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,7 +95,16 @@ public class LoginActivity extends BaseActivity {
         //登录
         if (o instanceof LoginBean){
             if (((LoginBean) o).getStatus().equals("0000")){
+                //登录成功获取userId、sessionId
+                int userId = ((LoginBean) o).getResult().getUserId();
+                String sessionId = ((LoginBean) o).getResult().getSessionId();
+                //存储
+                sp.edit().putInt("userId",userId)
+                        .putString("sessionId",sessionId)
+                        .commit();
+                //登录吐司
                 Toast.makeText(this, ((LoginBean) o).getMessage()+"", Toast.LENGTH_SHORT).show();
+                //进行跳转
                 Intent intent = new Intent(LoginActivity.this,TabActivity.class);
                 startActivity(intent);
                 //关闭当前页面

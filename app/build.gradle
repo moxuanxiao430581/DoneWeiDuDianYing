@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
-
+//app上添加
+apply plugin: 'com.jakewharton.butterknife'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
@@ -16,6 +17,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    //Android app 下添加  免报错
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
@@ -47,6 +53,12 @@ dependencies {
     implementation 'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0'
     // 支持Gson解析
     implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
-
+    //Butterknife依赖
+    implementation 'com.jakewharton:butterknife:10.0.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.0.0'
+    //fresco
+    implementation 'com.facebook.fresco:fresco:2.0.0'
+    //xbanner
+    implementation 'com.github.xiaohaibin:XBanner:1.7.0'
 
 }

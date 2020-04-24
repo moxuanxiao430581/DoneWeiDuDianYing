@@ -11,6 +11,10 @@ public interface IContract {
         void ModelPostRegisterInfo(String url, Map<String,Object> map, Class cls, ICallBack callBack);
         //登录
         void ModelPostLoginInfo(String url, Map<String,Object> map, Class cls, ICallBack callBack);
+        //根据用户ID查询用户信息
+        void ModelGetQueryuserInfo(String url, Class cls, ICallBack callBack);
+        //查询banner
+        void ModelGetXBannerInfo(String url, Class cls, ICallBack callBack);
     }
 
     //接口回调
@@ -33,6 +37,10 @@ public interface IContract {
         void PresenterPostRegisterInfo(String url, Map<String,Object> map, Class cls);
         //登录
         void PresenterPostLoginInfo(String url, Map<String,Object> map, Class cls);
+        //根据用户ID查询用户信息
+        void PresenterGetQueryuserInfo(String url, Class cls);
+        //查询banner
+        void PresenterGetXBannerInfo(String url, Class cls);
     }
 
 

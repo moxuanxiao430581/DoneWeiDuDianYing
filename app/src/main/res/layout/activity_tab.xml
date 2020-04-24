@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:background="#1E2444"
+        android:background="#2C315A"
         android:orientation="horizontal"
         android:gravity="center"
         >
@@ -32,6 +32,8 @@
         </com.google.android.material.tabs.TabLayout>
 
     </LinearLayout>
+
+
 
 
 </LinearLayout>

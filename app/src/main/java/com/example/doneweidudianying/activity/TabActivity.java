@@ -32,6 +32,7 @@ public class TabActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tab);
         initViews();
         initData();
+
     }
 
     private void initViews() {

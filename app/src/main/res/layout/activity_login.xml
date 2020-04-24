@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@mipmap/login"
+    tools:context=".activity.LoginActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="360dp"
+        android:layout_height="match_parent">
+        <EditText
+            android:id="@+id/loginemail"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:hint="请输入邮箱账号"
+            android:textColorHint="#A09898"
+            android:background="@drawable/edtext_later"
+            android:textColor="#F8F2F2"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/loginpass"
+                android:layout_width="250dp"
+                android:layout_height="50dp"
+                android:hint="请输入密码"
+                android:textColorHint="#A09898"
+                android:background="@drawable/edtext_left"
+                android:textColor="#F8F2F2"
+                />
+            <TextView
+                android:id="@+id/passtx"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:hint="忘记密码"
+                android:gravity="center"
+                android:background="@drawable/textview_layte"
+                />
+
+        </LinearLayout>
+        <TextView
+            android:id="@+id/resigntx"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="暂无账号 立即注册"
+            android:textColor="#A39E9E"
+            android:textSize="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="120dp"
+            />
+        <Button
+            android:id="@+id/loginbt"
+            android:layout_width="350dp"
+            android:layout_height="50dp"
+            android:background="@drawable/buttonlogin_shape"
+            android:text="登录"
+            android:textColor="#FCF7F7"
+            android:layout_marginTop="50dp"
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>

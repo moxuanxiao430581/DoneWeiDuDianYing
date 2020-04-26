@@ -221,7 +221,39 @@ public class NetUtlis {
     }
     //查询banner
     public void GetXBannerInfo(String url, final Class cls, final NetCallBack callBack){
-        apiServer.GetQueryuserInfo(url).subscribeOn(Schedulers.io())
+        apiServer.GetXBannerInfo(url).subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<ResponseBody>() {
+                    @Override
+                    public void onSubscribe(Disposable d) {
+
+                    }
+
+                    @Override
+                    public void onNext(ResponseBody responseBody) {
+                        Gson gson = new Gson();
+                        try {
+                            Object o = gson.fromJson(responseBody.string(), cls);
+                            callBack.onSuccess(o);
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+
+                    }
+
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
+    }
+    //查询正在上映电影列表
+    public void GetReceivedInfo(String url, Map<String,Object> map,final Class cls, final NetCallBack callBack){
+        apiServer.GetReceivedInfo(url,map).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<ResponseBody>() {
                     @Override

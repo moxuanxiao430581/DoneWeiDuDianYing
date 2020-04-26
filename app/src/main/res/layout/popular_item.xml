@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        >
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/popularfresco"
+            android:layout_width="150dp"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:placeholderImage="@mipmap/ic_launcher"
+            fresco:placeholderImageScaleType="centerCrop"
+            fresco:roundedCornerRadius="10dp"
+            android:layout_height="150dp">
+        </com.facebook.drawee.view.SimpleDraweeView>
+        <TextView
+            android:id="@+id/popularfen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9.4"
+            android:textColor="#F0EDED"
+            android:layout_alignBottom="@+id/popularfresco"
+            android:textSize="15sp"
+            android:layout_centerHorizontal="true"
+            >
+        </TextView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="150dp"
+        android:layout_marginLeft="20dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/popularname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="攀登者"
+            android:textColor="#FAF5F5"
+            android:textSize="15sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            >
+        </TextView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="150dp"
+        android:layout_marginLeft="20dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/popularbt"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:text="购票"
+            android:textColor="#FAF9F9"
+            android:textSize="15sp"
+            android:background="@drawable/textview_bt"
+            android:gravity="center"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            >
+        </TextView>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

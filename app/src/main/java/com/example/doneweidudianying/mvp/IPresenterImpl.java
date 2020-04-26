@@ -88,5 +88,20 @@ public class IPresenterImpl extends BasePresenter {
             }
         });
     }
+    //查询正在上映电影列表
+    @Override
+    public void PresenterGetReceivedInfo(String url, Map<String, Object> map, Class cls) {
+        iModel.ModelGettReceivedInfo(url, map, cls, new IContract.ICallBack() {
+            @Override
+            public void onSuccess(Object o) {
+                getView().onSuccess(o);
+            }
+
+            @Override
+            public void onError(String error) {
+
+            }
+        });
+    }
 
 }

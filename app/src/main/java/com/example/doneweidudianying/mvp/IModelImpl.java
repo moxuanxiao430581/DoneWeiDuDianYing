@@ -81,6 +81,21 @@ public class IModelImpl implements IContract.IModel {
             }
         });
     }
+    //查询正在上映电影列表
+    @Override
+    public void ModelGettReceivedInfo(String url, Map<String, Object> map, Class cls, IContract.ICallBack callBack) {
+        NetUtlis.getInstance().GetReceivedInfo(url, map, cls, new NetUtlis.NetCallBack() {
+            @Override
+            public void onSuccess(Object o) {
+                callBack.onSuccess(o);
+            }
+
+            @Override
+            public void onError(String error) {
+
+            }
+        });
+    }
 
 
 }

@@ -12,6 +12,11 @@ public interface BaseUrl {
     String QueryuserUrl="movieApi/user/v1/verify/getUserInfoByUserId";
     //查询banner
     String XBannerUrl="movieApi/tool/v2/banner";
-
+    //查询正在上映电影列表
+    String ReceivedUrl="movieApi/movie/v2/findReleaseMovieList";
+    //查询即将上映电影列表
+    String SoonUrl="movieApi/movie/v2/findComingSoonMovieList";
+    //热门电影
+    String PopularUrl="movieApi/movie/v2/findHotMovieList";
 
 }

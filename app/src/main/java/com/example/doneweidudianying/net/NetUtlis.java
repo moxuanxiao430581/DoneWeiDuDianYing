@@ -2,6 +2,8 @@ package com.example.doneweidudianying.net;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.util.Log;
 
 import com.example.doneweidudianying.api.ApiServer;
@@ -90,6 +92,16 @@ public class NetUtlis {
         void onError(String error);
     }
     //请求方式
+    //判断有网
+    public boolean isWang(){
+        ConnectivityManager manager = (ConnectivityManager) App.mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = manager.getActiveNetworkInfo();
+        if (activeNetworkInfo!=null&&activeNetworkInfo.isAvailable()) {
+            return true;
+        }else {
+            return false;
+        }
+    }
     //邮箱请求
     public void PostEmailInfo(String url, String email, final Class cls, final NetCallBack callBack){
         apiServer.PostEmailInfo(url,email).subscribeOn(Schedulers.io())
@@ -122,7 +134,6 @@ public class NetUtlis {
                     }
                 });
     }
-
     //注册请求
     public void PostRegisterInfo(String url, Map<String,Object> map, final Class cls, final NetCallBack callBack){
         apiServer.PostRegisterInfo(url,map).subscribeOn(Schedulers.io())
@@ -251,7 +262,7 @@ public class NetUtlis {
                     }
                 });
     }
-    //查询正在上映电影列表
+    //查询正在上映电影列表 即将上映   热门电影  根据关键字查询电影信息
     public void GetReceivedInfo(String url, Map<String,Object> map,final Class cls, final NetCallBack callBack){
         apiServer.GetReceivedInfo(url,map).subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

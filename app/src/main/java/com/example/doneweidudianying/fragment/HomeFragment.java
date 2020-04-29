@@ -7,11 +7,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.doneweidudianying.R;
+import com.example.doneweidudianying.activity.SearchActivity;
 import com.example.doneweidudianying.adapter.PopularAdapter;
 import com.example.doneweidudianying.adapter.ReceivedAdapter;
 import com.example.doneweidudianying.adapter.SoonAdapter;
@@ -43,6 +45,7 @@ public class HomeFragment extends BaseFragment {
     private RecyclerView ryingrecy;
     private RecyclerView jijiangrecy;
     private RecyclerView rmenrecy;
+    private ImageView homesearch;
 
     @Override
     protected void initData() {
@@ -63,6 +66,14 @@ public class HomeFragment extends BaseFragment {
         popularmap.put("page",2);
         popularmap.put("count",3);
         mPresenter.PresenterGetReceivedInfo(BaseUrl.PopularUrl,popularmap, PopularBean.class);
+        //根据关键字查询电影信息
+        homesearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SearchActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
@@ -88,6 +99,8 @@ public class HomeFragment extends BaseFragment {
         //热门电影
         rmenrecy = inflate.findViewById(R.id.rmenrecy);
         rmenrecy.setLayoutManager(new GridLayoutManager(getContext(),3));
+        //根据关键字查询电影信息
+        homesearch = inflate.findViewById(R.id.homesearch);
 
     }
 
@@ -136,6 +149,7 @@ public class HomeFragment extends BaseFragment {
             PopularAdapter adapter = new PopularAdapter(getContext(),((PopularBean) o).getResult());
             rmenrecy.setAdapter(adapter);
         }
+
 
     }
 

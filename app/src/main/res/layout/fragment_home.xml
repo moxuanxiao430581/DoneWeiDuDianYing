@@ -30,6 +30,7 @@
        </TextView>
 
        <ImageView
+           android:id="@+id/homesearch"
            android:layout_width="wrap_content"
            android:background="@mipmap/sousuo"
            android:layout_alignParentRight="true"

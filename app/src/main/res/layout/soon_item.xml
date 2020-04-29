@@ -4,6 +4,7 @@
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
+    android:background="#2C315A"
     android:layout_height="wrap_content">
     <RelativeLayout
         android:layout_width="match_parent"
@@ -11,7 +12,6 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
         >
-
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/soonfresco"
             android:layout_width="150dp"

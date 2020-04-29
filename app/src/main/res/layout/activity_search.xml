@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1E2444"
+    tools:context=".activity.SearchActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/searchimage"
+            android:layout_width="wrap_content"
+            android:background="@mipmap/search"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content">
+        </ImageView>
+
+        <EditText
+            android:id="@+id/searched"
+            android:layout_width="250dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/edtext_search"
+            android:textColor="#0F0E0E"
+            android:layout_height="40dp">
+        </EditText>
+
+        <TextView
+            android:id="@+id/searchimagebt"
+            android:layout_width="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:text="搜索"
+            android:textSize="23sp"
+            android:textColor="#F3EFEF"
+            android:layout_marginRight="30dp"
+            android:layout_centerVertical="true"
+            >
+        </TextView>
+
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/searchrecy"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    </androidx.recyclerview.widget.RecyclerView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        >
+        <ImageView
+            android:id="@+id/searchwang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </ImageView>
+        <TextView
+            android:id="@+id/searchtv"
+            android:layout_width="wrap_content"
+            android:textColor="#F7F2F2"
+            android:layout_gravity="center"
+            android:textSize="23sp"
+            android:layout_height="wrap_content">
+        </TextView>
+
+    </LinearLayout>
+
+
+</LinearLayout>

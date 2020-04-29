@@ -18,5 +18,9 @@ public interface BaseUrl {
     String SoonUrl="movieApi/movie/v2/findComingSoonMovieList";
     //热门电影
     String PopularUrl="movieApi/movie/v2/findHotMovieList";
+    //根据关键字查询电影信息
+    String InformationUrl="movieApi/movie/v2/findMovieByKeyword";
+
+
 
 }

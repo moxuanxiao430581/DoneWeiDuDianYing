@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:background="#2C315A"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        >
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/searchfresco"
+            android:layout_width="150dp"
+            fresco:actualImageScaleType="centerCrop"
+            fresco:placeholderImage="@mipmap/ic_launcher"
+            fresco:placeholderImageScaleType="centerCrop"
+            fresco:roundedCornerRadius="10dp"
+            android:layout_height="150dp">
+        </com.facebook.drawee.view.SimpleDraweeView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/searchname"
+                android:layout_width="wrap_content"
+                android:textSize="23sp"
+                android:text="悲伤"
+                android:textColor="#FAF4F4"
+                android:layout_marginLeft="50dp"
+                android:layout_height="wrap_content">
+            </TextView>
+
+            <TextView
+                android:id="@+id/searchdirectorname"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:textSize="18sp"
+                android:text="落落"
+                android:textColor="#FAF4F4"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/searchstarringname"
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:textSize="18sp"
+                android:text="李沁"
+                android:textColor="#FAF4F4"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content">
+
+            </TextView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="50dp"
+                >
+                <TextView
+                    android:id="@+id/searchfen"
+                    android:layout_width="wrap_content"
+                    android:textSize="18sp"
+                    android:text="9.4"
+                    android:textColor="#FAF4F4"
+                    android:layout_centerVertical="true"
+                    android:layout_height="wrap_content">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/searchbt"
+                    android:layout_width="50dp"
+                    android:layout_height="35dp"
+                    android:text="购票"
+                    android:textColor="#FAF9F9"
+                    android:textSize="15sp"
+                    android:background="@drawable/textview_bt"
+                    android:gravity="center"
+                    android:layout_alignParentRight="true"
+                    >
+                </TextView>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

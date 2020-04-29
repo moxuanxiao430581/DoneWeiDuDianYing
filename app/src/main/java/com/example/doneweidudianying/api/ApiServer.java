@@ -27,7 +27,7 @@ public interface ApiServer {
     //查询banner
     @GET
     Observable<ResponseBody> GetXBannerInfo(@Url String url);
-    //查询正在上映电影列表   即将上映   //热门电影
+    //查询正在上映电影列表   即将上映   热门电影  根据关键字查询电影信息
     @GET
     Observable<ResponseBody> GetReceivedInfo(@Url String url, @QueryMap Map<String,Object> map);
 
